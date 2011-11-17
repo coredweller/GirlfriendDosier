@@ -1,0 +1,7 @@
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Core\bin\Debug\Core.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Core\bin\Debug\Core.pdb
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Core\bin\Debug\HtmlAgilityPack.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Core\bin\Debug\StructureMap.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Core\obj\Debug\Core.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Core\obj\Debug\Core.pdb

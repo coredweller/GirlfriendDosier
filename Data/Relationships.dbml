@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Relationships" EntityNamespace="Data.DomainObjects" ContextNamespace="Data.Repository" Class="RelationshipsDatabase" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TheDanimal\SQLEXPRESS;Initial Catalog=Relationships;Integrated Security=True" SettingsObjectName="Data.Properties.Settings" SettingsPropertyName="RelationshipsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Artist" Member="Artists">
+    <Type Name="Artist">
+      <Column Name="ArtistId" Member="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AttendedCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="fkRelationshipId" Member="RelationshipId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_Artist" Member="Relationship" ThisKey="RelationshipId" OtherKey="Id" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Restaurant" Member="Restaurants">
+    <Type Name="Restaurant">
+      <Column Name="RestaurantId" Member="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FoodType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DateAttended" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Bar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="fkRelationshipId" Member="RelationshipId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_Restaurant" Member="Relationship" ThisKey="RelationshipId" OtherKey="Id" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Favorites" Member="Favorites">
+    <Type Name="Favorites">
+      <Column Name="FavoriteId" Member="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Flower" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Movie" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Band" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fkRelationshipId" Member="RelationshipId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_Favorites" Member="Relationship" ThisKey="RelationshipId" OtherKey="Id" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Flowers" Member="Flowers">
+    <Type Name="Flowers">
+      <Column Name="FlowerId" Member="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ArrangementName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Vendor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DateBought" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateReceived" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Delivered" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="fkRelationshipId" Member="RelationshipId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_Flowers" Member="Relationship" ThisKey="RelationshipId" OtherKey="Id" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GenericFavorite" Member="GenericFavorites">
+    <Type Name="GenericFavorite">
+      <Column Name="GenericFavoriteId" Member="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="fkRelationshipId" Member="RelationshipId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_GenericFavorite" Member="Relationship" ThisKey="RelationshipId" OtherKey="Id" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Gift" Member="Gifts">
+    <Type Name="Gift">
+      <Column Name="GiftId" Member="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DateBought" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateGiven" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Occasion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OccasionOther" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fkRelationshipId" Member="RelationshipId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_Gift" Member="Relationship" ThisKey="RelationshipId" OtherKey="Id" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Relationship" Member="Relationships">
+    <Type Name="Relationship">
+      <Column Name="RelationshipId" Member="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NickName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Anniversary" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FirstDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FirstKiss" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MeetingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Married" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="WeddingAnniversary" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MarriedToYou" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Relationship_Artist" Member="Artists" ThisKey="Id" OtherKey="RelationshipId" Type="Artist" />
+      <Association Name="Relationship_Restaurant" Member="Restaurants" ThisKey="Id" OtherKey="RelationshipId" Type="Restaurant" />
+      <Association Name="Relationship_Favorites" Member="Favorites" ThisKey="Id" OtherKey="RelationshipId" Type="Favorites" />
+      <Association Name="Relationship_Flowers" Member="Flowers" ThisKey="Id" OtherKey="RelationshipId" Type="Flowers" />
+      <Association Name="Relationship_GenericFavorite" Member="GenericFavorites" ThisKey="Id" OtherKey="RelationshipId" Type="GenericFavorite" />
+      <Association Name="Relationship_Gift" Member="Gifts" ThisKey="Id" OtherKey="RelationshipId" Type="Gift" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,10 @@
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\bin\Debug\Data.dll.config
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\bin\Debug\Data.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\bin\Debug\Data.pdb
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\bin\Debug\Core.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\bin\Debug\log4net.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\bin\Debug\StructureMap.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\bin\Debug\Core.pdb
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\obj\Debug\Data.dll
+C:\Projects\Girlfriend Dosier\GirlfriendDosier\Data\obj\Debug\Data.pdb

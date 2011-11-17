@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11" name="Relationships">
+  <DataContextMoniker Name="/RelationshipsDatabase" />
+  <nestedChildShapes>
+    <classShape Id="f5325eee-7c14-49db-a90b-14689ad290aa" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RelationshipsDatabase/Artist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dfad9b91-d590-4261-8943-64ec3cbcfcc1" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34caffb1-b2e5-434c-8c1b-5de706727ee6" absoluteBounds="3.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/RelationshipsDatabase/Restaurant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd9d5236-207c-41cf-9485-205633d1e6b2" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26c64cc2-fe4a-4b1b-860b-0e66b4481bfc" absoluteBounds="0.75, 6.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/RelationshipsDatabase/Favorites" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92eda195-8d14-46c9-8d59-ba71df5c4a1d" absoluteBounds="0.765, 6.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="daeae7aa-8ae7-4f5a-91ee-fe13fdf38b26" absoluteBounds="3.875, 8.25, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/RelationshipsDatabase/Flowers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d387516-09a5-4213-9c44-55391b8a3899" absoluteBounds="3.89, 8.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97b2ee99-3081-4821-90f5-8ad6ba158f84" absoluteBounds="6.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RelationshipsDatabase/GenericFavorite" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b78c1528-49bf-4ad1-ae5e-9863d855db38" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b84a923f-b2bd-4337-9e60-bfd4490a9869" absoluteBounds="8.25, 6.125, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/RelationshipsDatabase/Gift" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b5b4f25-76fb-4d9b-a7f6-3cee24e7908f" absoluteBounds="8.265, 6.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e4ddc2a-b83f-4143-96aa-5a25e6ed3ba8" absoluteBounds="4.5, 3.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/RelationshipsDatabase/Relationship" />
+      <nestedChildShapes>
+        <elementListCompartment Id="21299997-3b36-40c4-b4ec-c855da179e42" absoluteBounds="4.5150000000000006, 4.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 3.75); (4.125 : 3.375); (1.75 : 3.375); (1.75 : 2.52089680989583)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RelationshipsDatabase/Relationship/Relationship_Artist" />
+      <nodes>
+        <classShapeMoniker Id="3e4ddc2a-b83f-4143-96aa-5a25e6ed3ba8" />
+        <classShapeMoniker Id="f5325eee-7c14-49db-a90b-14689ad290aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.1562525 : 3.75); (5.1562525 : 3.09780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RelationshipsDatabase/Relationship/Relationship_Restaurant" />
+      <nodes>
+        <classShapeMoniker Id="3e4ddc2a-b83f-4143-96aa-5a25e6ed3ba8" />
+        <classShapeMoniker Id="34caffb1-b2e5-434c-8c1b-5de706727ee6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 6.75080485026042); (2.75 : 6.75080485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RelationshipsDatabase/Relationship/Relationship_Favorites" />
+      <nodes>
+        <classShapeMoniker Id="3e4ddc2a-b83f-4143-96aa-5a25e6ed3ba8" />
+        <classShapeMoniker Id="26c64cc2-fe4a-4b1b-860b-0e66b4481bfc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.1875 : 7.25160970052083); (5.1875 : 8.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RelationshipsDatabase/Relationship/Relationship_Flowers" />
+      <nodes>
+        <classShapeMoniker Id="3e4ddc2a-b83f-4143-96aa-5a25e6ed3ba8" />
+        <classShapeMoniker Id="daeae7aa-8ae7-4f5a-91ee-fe13fdf38b26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.5 : 4.90625); (7.46875 : 4.90625); (7.46875 : 2.32859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RelationshipsDatabase/Relationship/Relationship_GenericFavorite" />
+      <nodes>
+        <classShapeMoniker Id="3e4ddc2a-b83f-4143-96aa-5a25e6ed3ba8" />
+        <classShapeMoniker Id="97b2ee99-3081-4821-90f5-8ad6ba158f84" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.5 : 6.68830485026042); (8.25 : 6.68830485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RelationshipsDatabase/Relationship/Relationship_Gift" />
+      <nodes>
+        <classShapeMoniker Id="3e4ddc2a-b83f-4143-96aa-5a25e6ed3ba8" />
+        <classShapeMoniker Id="b84a923f-b2bd-4337-9e60-bfd4490a9869" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
