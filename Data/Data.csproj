@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DataRegistry.cs" />
     <Compile Include="DomainObjects\Artist.cs" />
     <Compile Include="DomainObjects\Favorites.cs" />
@@ -56,6 +55,7 @@
     <Compile Include="DomainObjects\Gift.cs" />
     <Compile Include="DomainObjects\Relationship.cs" />
     <Compile Include="DomainObjects\Restaurant.cs" />
+    <Compile Include="LoggedActionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -67,15 +67,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Relationships.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Repository\ArtistRepository.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ConnectionString.cs" />
     <Compile Include="Repository\DebuggerWriter.cs" />
+    <Compile Include="Repository\FavoritesRepository.cs" />
+    <Compile Include="Repository\FlowersRepository.cs" />
+    <Compile Include="Repository\GenericFavoriteRepository.cs" />
+    <Compile Include="Repository\GiftRepository.cs" />
     <Compile Include="Repository\IConnectionString.cs" />
     <Compile Include="Repository\ILogWriter.cs" />
     <Compile Include="Repository\IRelationshipsDatabase.cs" />
     <Compile Include="Repository\IRelationshipsDatabaseFactory.cs" />
     <Compile Include="Repository\LogWriter.cs" />
+    <Compile Include="Repository\RelationshipRepository.cs" />
     <Compile Include="Repository\RelationshipsDatabase.cs" />
     <Compile Include="Repository\RelationshipsDatabaseFactory.cs" />
+    <Compile Include="Repository\RestaurantRepository.cs" />
     <Compile Include="Repository\UnityOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

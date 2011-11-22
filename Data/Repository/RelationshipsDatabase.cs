@@ -1,15 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Diagnostics;
 using System.Data.Linq;
+using Core.DomainObjects;
+using Data.DomainObjects;
 
 namespace Data.Repository
 {
     public partial class RelationshipsDatabase : IRelationshipsDatabase
     {
         public RelationshipsDatabase( IConnectionString connectionString ) : this( connectionString.Value ) { }
+
+        public IQueryable<IRelationship> RelationshipDataSource {
+            get { return GetQueryable<Relationship>().Cast<IRelationship>(); }
+        }
+
+        public IQueryable<IArtist> ArtistDataSource {
+            get { return GetQueryable<Artist>().Cast<IArtist>(); }
+        }
+
+        public IQueryable<IFavorites> FavoritesDataSource {
+            get { return GetQueryable<Favorites>().Cast<IFavorites>(); }
+        }
+
+        public IQueryable<IFlowers> FlowersDataSource {
+            get { return GetQueryable<Flowers>().Cast<IFlowers>(); }
+        }
+
+        public IQueryable<IGenericFavorite> GenericFavoriteDataSource {
+            get { return GetQueryable<GenericFavorite>().Cast<IGenericFavorite>(); }
+        }
+
+        public IQueryable<IGift> GiftDataSource {
+            get { return GetQueryable<Gift>().Cast<IGift>(); }
+        }
+
+        public IQueryable<IRestaurant> RestaurantDataSource {
+            get { return GetQueryable<Restaurant>().Cast<IRestaurant>(); }
+        }
+
 
         public virtual IQueryable<TEntity> GetQueryable<TEntity>() where TEntity : class
         { 

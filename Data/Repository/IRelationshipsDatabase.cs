@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Data.Linq;
 using System;
+using Core.DomainObjects;
 
 namespace Data.Repository
 {
@@ -17,5 +18,13 @@ namespace Data.Repository
         IList<TEntity> InsertChangeSet<TEntity>() where TEntity : class;
         IList<TEntity> UpdateChangeSet<TEntity>() where TEntity : class;
         void SubmitChanges();
+
+        IQueryable<IRelationship> RelationshipDataSource { get; }
+        IQueryable<IArtist> ArtistDataSource { get; }
+        IQueryable<IFavorites> FavoritesDataSource { get; }
+        IQueryable<IFlowers> FlowersDataSource { get; }
+        IQueryable<IGenericFavorite> GenericFavoriteDataSource { get; }
+        IQueryable<IGift> GiftDataSource { get; }
+        IQueryable<IRestaurant> RestaurantDataSource { get; }
     }
 }

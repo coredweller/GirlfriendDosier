@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Configuration\AppConfigManager.cs" />
     <Compile Include="Configuration\ConfigurationSettings.cs" />
     <Compile Include="Configuration\IAppConfigManager.cs" />
@@ -92,10 +91,16 @@
     <Compile Include="Infrastructure\UoW\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\UoW\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IArtistRepository.cs" />
+    <Compile Include="Repository\IFavoritesRepository.cs" />
+    <Compile Include="Repository\IFlowersRepository.cs" />
+    <Compile Include="Repository\IGenericFavoriteRepository.cs" />
+    <Compile Include="Repository\IGiftRepository.cs" />
+    <Compile Include="Repository\IRelationshipRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IRestaurantRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
