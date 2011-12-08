@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5EA59359-D44C-4761-8095-824B4E17A324}</ProjectGuid>
+    <ProjectGuid>{F09C45B9-3459-4ACD-A9DA-E042B9C9E7CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data</RootNamespace>
-    <AssemblyName>Data</AssemblyName>
+    <RootNamespace>EData</RootNamespace>
+    <AssemblyName>EData</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,15 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\Libs\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap">
-      <HintPath>..\Libs\StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataRegistry.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="DomainObjects\Artist.cs" />
     <Compile Include="DomainObjects\Favorites.cs" />
     <Compile Include="DomainObjects\Flowers.cs" />
@@ -55,56 +51,19 @@
     <Compile Include="DomainObjects\Gift.cs" />
     <Compile Include="DomainObjects\Relationship.cs" />
     <Compile Include="DomainObjects\Restaurant.cs" />
-    <Compile Include="LoggedActionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Relationships.designer.cs">
+    <Compile Include="Relationships.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Relationships.dbml</DependentUpon>
+      <DependentUpon>Relationships.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Repository\ArtistRepository.cs" />
-    <Compile Include="Repository\BaseRepository.cs" />
-    <Compile Include="Repository\ConnectionString.cs" />
-    <Compile Include="Repository\DebuggerWriter.cs" />
-    <Compile Include="Repository\FavoritesRepository.cs" />
-    <Compile Include="Repository\FlowersRepository.cs" />
-    <Compile Include="Repository\GenericFavoriteRepository.cs" />
-    <Compile Include="Repository\GiftRepository.cs" />
-    <Compile Include="Repository\IConnectionString.cs" />
-    <Compile Include="Repository\ILogWriter.cs" />
-    <Compile Include="Repository\IRelationshipsDatabase.cs" />
-    <Compile Include="Repository\IRelationshipsDatabaseFactory.cs" />
-    <Compile Include="Repository\LogWriter.cs" />
-    <Compile Include="Repository\RelationshipRepository.cs" />
-    <Compile Include="Repository\RelationshipsDatabase.cs" />
-    <Compile Include="Repository\RelationshipsDatabaseFactory.cs" />
-    <Compile Include="Repository\RestaurantRepository.cs" />
-    <Compile Include="Repository\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Relationships.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Relationships.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Relationships.dbml.layout">
-      <DependentUpon>Relationships.dbml</DependentUpon>
-    </None>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Relationships.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Relationships.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
