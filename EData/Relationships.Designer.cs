@@ -18,12 +18,12 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("RelationshipsModel", "FK_Artist_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Artist", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Artist), true)]
-[assembly: EdmRelationshipAttribute("RelationshipsModel", "FK_Favorites_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Favorites", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Favorites), true)]
-[assembly: EdmRelationshipAttribute("RelationshipsModel", "FK_Flowers_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Flowers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Flowers), true)]
-[assembly: EdmRelationshipAttribute("RelationshipsModel", "FK_GenericFavorite_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "GenericFavorite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.GenericFavorite), true)]
-[assembly: EdmRelationshipAttribute("RelationshipsModel", "FK_Gift_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Gift", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Gift), true)]
-[assembly: EdmRelationshipAttribute("RelationshipsModel", "FK_Restaurant_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Restaurant", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Restaurant), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Artist_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Artist", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Artist), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Favorites_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Favorites", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Favorites), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Flowers_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Flowers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Flowers), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_GenericFavorite_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "GenericFavorite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.GenericFavorite), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Gift_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Gift", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Gift), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Restaurant_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Restaurant", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Restaurant), true)]
 
 #endregion
 
@@ -34,32 +34,32 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class Entities : ObjectContext
+    public partial class RelationshipsDatabase : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new Entities object using the connection string found in the 'Entities' section of the application configuration file.
+        /// Initializes a new RelationshipsDatabase object using the connection string found in the 'RelationshipsDatabase' section of the application configuration file.
         /// </summary>
-        public Entities() : base("name=Entities", "Entities")
+        public RelationshipsDatabase() : base("name=RelationshipsDatabase", "RelationshipsDatabase")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new Entities object.
+        /// Initialize a new RelationshipsDatabase object.
         /// </summary>
-        public Entities(string connectionString) : base(connectionString, "Entities")
+        public RelationshipsDatabase(string connectionString) : base(connectionString, "RelationshipsDatabase")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new Entities object.
+        /// Initialize a new RelationshipsDatabase object.
         /// </summary>
-        public Entities(EntityConnection connection) : base(connection, "Entities")
+        public RelationshipsDatabase(EntityConnection connection) : base(connection, "RelationshipsDatabase")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -473,7 +473,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="Artist")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="Artist")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Artist : EntityObject
@@ -631,16 +631,16 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Artist_Relationship", "Relationship")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Artist_Relationship", "Relationship")]
         public Relationship Relationship
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Artist_Relationship", "Relationship").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Artist_Relationship", "Relationship").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Artist_Relationship", "Relationship").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Artist_Relationship", "Relationship").Value = value;
             }
         }
         /// <summary>
@@ -652,13 +652,13 @@ namespace EData
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Artist_Relationship", "Relationship");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Artist_Relationship", "Relationship");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("RelationshipsModel.FK_Artist_Relationship", "Relationship", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("EData.Repository.FK_Artist_Relationship", "Relationship", value);
                 }
             }
         }
@@ -669,7 +669,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="Favorites")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="Favorites")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Favorites : EntityObject
@@ -849,16 +849,16 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Favorites_Relationship", "Relationship")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Favorites_Relationship", "Relationship")]
         public Relationship Relationship
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Favorites_Relationship", "Relationship").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Favorites_Relationship", "Relationship").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Favorites_Relationship", "Relationship").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Favorites_Relationship", "Relationship").Value = value;
             }
         }
         /// <summary>
@@ -870,13 +870,13 @@ namespace EData
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Favorites_Relationship", "Relationship");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Favorites_Relationship", "Relationship");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("RelationshipsModel.FK_Favorites_Relationship", "Relationship", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("EData.Repository.FK_Favorites_Relationship", "Relationship", value);
                 }
             }
         }
@@ -887,7 +887,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="Flowers")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="Flowers")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Flowers : EntityObject
@@ -1141,16 +1141,16 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Flowers_Relationship", "Relationship")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Flowers_Relationship", "Relationship")]
         public Relationship Relationship
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Flowers_Relationship", "Relationship").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Flowers_Relationship", "Relationship").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Flowers_Relationship", "Relationship").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Flowers_Relationship", "Relationship").Value = value;
             }
         }
         /// <summary>
@@ -1162,13 +1162,13 @@ namespace EData
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Flowers_Relationship", "Relationship");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Flowers_Relationship", "Relationship");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("RelationshipsModel.FK_Flowers_Relationship", "Relationship", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("EData.Repository.FK_Flowers_Relationship", "Relationship", value);
                 }
             }
         }
@@ -1179,7 +1179,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="GenericFavorite")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="GenericFavorite")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class GenericFavorite : EntityObject
@@ -1311,16 +1311,16 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_GenericFavorite_Relationship", "Relationship")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_GenericFavorite_Relationship", "Relationship")]
         public Relationship Relationship
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_GenericFavorite_Relationship", "Relationship").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_GenericFavorite_Relationship", "Relationship").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_GenericFavorite_Relationship", "Relationship").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_GenericFavorite_Relationship", "Relationship").Value = value;
             }
         }
         /// <summary>
@@ -1332,13 +1332,13 @@ namespace EData
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_GenericFavorite_Relationship", "Relationship");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_GenericFavorite_Relationship", "Relationship");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("RelationshipsModel.FK_GenericFavorite_Relationship", "Relationship", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("EData.Repository.FK_GenericFavorite_Relationship", "Relationship", value);
                 }
             }
         }
@@ -1349,7 +1349,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="Gift")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="Gift")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Gift : EntityObject
@@ -1601,16 +1601,16 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Gift_Relationship", "Relationship")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Gift_Relationship", "Relationship")]
         public Relationship Relationship
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Gift_Relationship", "Relationship").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Gift_Relationship", "Relationship").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Gift_Relationship", "Relationship").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Gift_Relationship", "Relationship").Value = value;
             }
         }
         /// <summary>
@@ -1622,13 +1622,13 @@ namespace EData
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Gift_Relationship", "Relationship");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Gift_Relationship", "Relationship");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("RelationshipsModel.FK_Gift_Relationship", "Relationship", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("EData.Repository.FK_Gift_Relationship", "Relationship", value);
                 }
             }
         }
@@ -1639,7 +1639,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="Relationship")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="Relationship")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Relationship : EntityObject
@@ -2017,18 +2017,18 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Artist_Relationship", "Artist")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Artist_Relationship", "Artist")]
         public EntityCollection<Artist> Artist
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Artist>("RelationshipsModel.FK_Artist_Relationship", "Artist");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Artist>("EData.Repository.FK_Artist_Relationship", "Artist");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Artist>("RelationshipsModel.FK_Artist_Relationship", "Artist", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Artist>("EData.Repository.FK_Artist_Relationship", "Artist", value);
                 }
             }
         }
@@ -2039,18 +2039,18 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Favorites_Relationship", "Favorites")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Favorites_Relationship", "Favorites")]
         public EntityCollection<Favorites> Favorites
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Favorites>("RelationshipsModel.FK_Favorites_Relationship", "Favorites");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Favorites>("EData.Repository.FK_Favorites_Relationship", "Favorites");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Favorites>("RelationshipsModel.FK_Favorites_Relationship", "Favorites", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Favorites>("EData.Repository.FK_Favorites_Relationship", "Favorites", value);
                 }
             }
         }
@@ -2061,18 +2061,18 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Flowers_Relationship", "Flowers")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Flowers_Relationship", "Flowers")]
         public EntityCollection<Flowers> Flowers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Flowers>("RelationshipsModel.FK_Flowers_Relationship", "Flowers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Flowers>("EData.Repository.FK_Flowers_Relationship", "Flowers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Flowers>("RelationshipsModel.FK_Flowers_Relationship", "Flowers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Flowers>("EData.Repository.FK_Flowers_Relationship", "Flowers", value);
                 }
             }
         }
@@ -2083,18 +2083,18 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_GenericFavorite_Relationship", "GenericFavorite")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_GenericFavorite_Relationship", "GenericFavorite")]
         public EntityCollection<GenericFavorite> GenericFavorite
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<GenericFavorite>("RelationshipsModel.FK_GenericFavorite_Relationship", "GenericFavorite");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<GenericFavorite>("EData.Repository.FK_GenericFavorite_Relationship", "GenericFavorite");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<GenericFavorite>("RelationshipsModel.FK_GenericFavorite_Relationship", "GenericFavorite", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<GenericFavorite>("EData.Repository.FK_GenericFavorite_Relationship", "GenericFavorite", value);
                 }
             }
         }
@@ -2105,18 +2105,18 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Gift_Relationship", "Gift")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Gift_Relationship", "Gift")]
         public EntityCollection<Gift> Gift
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Gift>("RelationshipsModel.FK_Gift_Relationship", "Gift");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Gift>("EData.Repository.FK_Gift_Relationship", "Gift");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Gift>("RelationshipsModel.FK_Gift_Relationship", "Gift", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Gift>("EData.Repository.FK_Gift_Relationship", "Gift", value);
                 }
             }
         }
@@ -2127,18 +2127,18 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Restaurant_Relationship", "Restaurant")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Restaurant_Relationship", "Restaurant")]
         public EntityCollection<Restaurant> Restaurant
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Restaurant>("RelationshipsModel.FK_Restaurant_Relationship", "Restaurant");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Restaurant>("EData.Repository.FK_Restaurant_Relationship", "Restaurant");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Restaurant>("RelationshipsModel.FK_Restaurant_Relationship", "Restaurant", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Restaurant>("EData.Repository.FK_Restaurant_Relationship", "Restaurant", value);
                 }
             }
         }
@@ -2149,7 +2149,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="Restaurant")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="Restaurant")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Restaurant : EntityObject
@@ -2379,16 +2379,16 @@ namespace EData
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("RelationshipsModel", "FK_Restaurant_Relationship", "Relationship")]
+        [EdmRelationshipNavigationPropertyAttribute("EData.Repository", "FK_Restaurant_Relationship", "Relationship")]
         public Relationship Relationship
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Restaurant_Relationship", "Relationship").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Restaurant_Relationship", "Relationship").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Restaurant_Relationship", "Relationship").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Restaurant_Relationship", "Relationship").Value = value;
             }
         }
         /// <summary>
@@ -2400,13 +2400,13 @@ namespace EData
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("RelationshipsModel.FK_Restaurant_Relationship", "Relationship");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Relationship>("EData.Repository.FK_Restaurant_Relationship", "Relationship");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("RelationshipsModel.FK_Restaurant_Relationship", "Relationship", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Relationship>("EData.Repository.FK_Restaurant_Relationship", "Relationship", value);
                 }
             }
         }
@@ -2417,7 +2417,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_Applications")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_Applications")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_Applications : EntityObject
@@ -2554,7 +2554,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_MembershipUsers")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_MembershipUsers")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_MembershipUsers : EntityObject
@@ -3212,7 +3212,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_Profiles")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_Profiles")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_Profiles : EntityObject
@@ -3320,7 +3320,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_Roles")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_Roles")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_Roles : EntityObject
@@ -3486,7 +3486,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_Users")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_Users")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_Users : EntityObject
@@ -3710,7 +3710,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_UsersInRoles")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_UsersInRoles")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_UsersInRoles : EntityObject
@@ -3794,7 +3794,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_WebPartState_Paths")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_WebPartState_Paths")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_WebPartState_Paths : EntityObject
@@ -3936,7 +3936,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_WebPartState_Shared")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_WebPartState_Shared")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_WebPartState_Shared : EntityObject
@@ -4044,7 +4044,7 @@ namespace EData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="RelationshipsModel", Name="vw_aspnet_WebPartState_User")]
+    [EdmEntityTypeAttribute(NamespaceName="EData.Repository", Name="vw_aspnet_WebPartState_User")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class vw_aspnet_WebPartState_User : EntityObject

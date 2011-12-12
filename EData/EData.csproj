@@ -31,9 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -43,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DomainObjects\Artist.cs" />
     <Compile Include="DomainObjects\Favorites.cs" />
     <Compile Include="DomainObjects\Flowers.cs" />
@@ -51,12 +58,32 @@
     <Compile Include="DomainObjects\Gift.cs" />
     <Compile Include="DomainObjects\Relationship.cs" />
     <Compile Include="DomainObjects\Restaurant.cs" />
+    <Compile Include="EDataRegistry.cs" />
+    <Compile Include="LoggedActionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relationships.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Relationships.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Repository\ArtistRepository.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\ConnectionString.cs" />
+    <Compile Include="Repository\DebuggerWriter.cs" />
+    <Compile Include="Repository\FavoritesRepository.cs" />
+    <Compile Include="Repository\FlowersRepository.cs" />
+    <Compile Include="Repository\GenericFavoriteRepository.cs" />
+    <Compile Include="Repository\GiftRepository.cs" />
+    <Compile Include="Repository\IConnectionString.cs" />
+    <Compile Include="Repository\ILogWriter.cs" />
+    <Compile Include="Repository\IRelationshipsDatabase.cs" />
+    <Compile Include="Repository\IRelationshipsDatabaseFactory.cs" />
+    <Compile Include="Repository\LogWriter.cs" />
+    <Compile Include="Repository\RelationshipRepository.cs" />
+    <Compile Include="Repository\RelationshipsDatabase.cs" />
+    <Compile Include="Repository\RelationshipsDatabaseFactory.cs" />
+    <Compile Include="Repository\RestaurantRepository.cs" />
+    <Compile Include="Repository\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

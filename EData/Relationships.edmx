@@ -453,45 +453,45 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="RelationshipsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Artist" EntityType="RelationshipsModel.Artist" />
-          <EntitySet Name="Favorites" EntityType="RelationshipsModel.Favorites" />
-          <EntitySet Name="Flowers" EntityType="RelationshipsModel.Flowers" />
-          <EntitySet Name="GenericFavorite" EntityType="RelationshipsModel.GenericFavorite" />
-          <EntitySet Name="Gift" EntityType="RelationshipsModel.Gift" />
-          <EntitySet Name="Relationship" EntityType="RelationshipsModel.Relationship" />
-          <EntitySet Name="Restaurant" EntityType="RelationshipsModel.Restaurant" />
-          <EntitySet Name="vw_aspnet_Applications" EntityType="RelationshipsModel.vw_aspnet_Applications" />
-          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="RelationshipsModel.vw_aspnet_MembershipUsers" />
-          <EntitySet Name="vw_aspnet_Profiles" EntityType="RelationshipsModel.vw_aspnet_Profiles" />
-          <EntitySet Name="vw_aspnet_Roles" EntityType="RelationshipsModel.vw_aspnet_Roles" />
-          <EntitySet Name="vw_aspnet_Users" EntityType="RelationshipsModel.vw_aspnet_Users" />
-          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="RelationshipsModel.vw_aspnet_UsersInRoles" />
-          <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="RelationshipsModel.vw_aspnet_WebPartState_Paths" />
-          <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="RelationshipsModel.vw_aspnet_WebPartState_Shared" />
-          <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="RelationshipsModel.vw_aspnet_WebPartState_User" />
-          <AssociationSet Name="FK_Artist_Relationship" Association="RelationshipsModel.FK_Artist_Relationship">
+      <Schema Namespace="EData.Repository" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="RelationshipsDatabase" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Artist" EntityType="EData.Repository.Artist" />
+          <EntitySet Name="Favorites" EntityType="EData.Repository.Favorites" />
+          <EntitySet Name="Flowers" EntityType="EData.Repository.Flowers" />
+          <EntitySet Name="GenericFavorite" EntityType="EData.Repository.GenericFavorite" />
+          <EntitySet Name="Gift" EntityType="EData.Repository.Gift" />
+          <EntitySet Name="Relationship" EntityType="EData.Repository.Relationship" />
+          <EntitySet Name="Restaurant" EntityType="EData.Repository.Restaurant" />
+          <EntitySet Name="vw_aspnet_Applications" EntityType="EData.Repository.vw_aspnet_Applications" />
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="EData.Repository.vw_aspnet_MembershipUsers" />
+          <EntitySet Name="vw_aspnet_Profiles" EntityType="EData.Repository.vw_aspnet_Profiles" />
+          <EntitySet Name="vw_aspnet_Roles" EntityType="EData.Repository.vw_aspnet_Roles" />
+          <EntitySet Name="vw_aspnet_Users" EntityType="EData.Repository.vw_aspnet_Users" />
+          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="EData.Repository.vw_aspnet_UsersInRoles" />
+          <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="EData.Repository.vw_aspnet_WebPartState_Paths" />
+          <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="EData.Repository.vw_aspnet_WebPartState_Shared" />
+          <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="EData.Repository.vw_aspnet_WebPartState_User" />
+          <AssociationSet Name="FK_Artist_Relationship" Association="EData.Repository.FK_Artist_Relationship">
             <End Role="Relationship" EntitySet="Relationship" />
             <End Role="Artist" EntitySet="Artist" />
           </AssociationSet>
-          <AssociationSet Name="FK_Favorites_Relationship" Association="RelationshipsModel.FK_Favorites_Relationship">
+          <AssociationSet Name="FK_Favorites_Relationship" Association="EData.Repository.FK_Favorites_Relationship">
             <End Role="Relationship" EntitySet="Relationship" />
             <End Role="Favorites" EntitySet="Favorites" />
           </AssociationSet>
-          <AssociationSet Name="FK_Flowers_Relationship" Association="RelationshipsModel.FK_Flowers_Relationship">
+          <AssociationSet Name="FK_Flowers_Relationship" Association="EData.Repository.FK_Flowers_Relationship">
             <End Role="Relationship" EntitySet="Relationship" />
             <End Role="Flowers" EntitySet="Flowers" />
           </AssociationSet>
-          <AssociationSet Name="FK_GenericFavorite_Relationship" Association="RelationshipsModel.FK_GenericFavorite_Relationship">
+          <AssociationSet Name="FK_GenericFavorite_Relationship" Association="EData.Repository.FK_GenericFavorite_Relationship">
             <End Role="Relationship" EntitySet="Relationship" />
             <End Role="GenericFavorite" EntitySet="GenericFavorite" />
           </AssociationSet>
-          <AssociationSet Name="FK_Gift_Relationship" Association="RelationshipsModel.FK_Gift_Relationship">
+          <AssociationSet Name="FK_Gift_Relationship" Association="EData.Repository.FK_Gift_Relationship">
             <End Role="Relationship" EntitySet="Relationship" />
             <End Role="Gift" EntitySet="Gift" />
           </AssociationSet>
-          <AssociationSet Name="FK_Restaurant_Relationship" Association="RelationshipsModel.FK_Restaurant_Relationship">
+          <AssociationSet Name="FK_Restaurant_Relationship" Association="EData.Repository.FK_Restaurant_Relationship">
             <End Role="Relationship" EntitySet="Relationship" />
             <End Role="Restaurant" EntitySet="Restaurant" />
           </AssociationSet>
@@ -505,7 +505,7 @@
           <Property Name="AttendedCount" Type="Int32" Nullable="false" />
           <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
           <Property Name="RelationshipId" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Relationship" Relationship="RelationshipsModel.FK_Artist_Relationship" FromRole="Artist" ToRole="Relationship" />
+          <NavigationProperty Name="Relationship" Relationship="EData.Repository.FK_Artist_Relationship" FromRole="Artist" ToRole="Relationship" />
         </EntityType>
         <EntityType Name="Favorites">
           <Key>
@@ -517,7 +517,7 @@
           <Property Name="Movie" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="Band" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="RelationshipId" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Relationship" Relationship="RelationshipsModel.FK_Favorites_Relationship" FromRole="Favorites" ToRole="Relationship" />
+          <NavigationProperty Name="Relationship" Relationship="EData.Repository.FK_Favorites_Relationship" FromRole="Favorites" ToRole="Relationship" />
         </EntityType>
         <EntityType Name="Flowers">
           <Key>
@@ -532,7 +532,7 @@
           <Property Name="Delivered" Type="Boolean" Nullable="false" />
           <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
           <Property Name="RelationshipId" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Relationship" Relationship="RelationshipsModel.FK_Flowers_Relationship" FromRole="Flowers" ToRole="Relationship" />
+          <NavigationProperty Name="Relationship" Relationship="EData.Repository.FK_Flowers_Relationship" FromRole="Flowers" ToRole="Relationship" />
         </EntityType>
         <EntityType Name="GenericFavorite">
           <Key>
@@ -542,7 +542,7 @@
           <Property Name="Name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="Value" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="RelationshipId" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Relationship" Relationship="RelationshipsModel.FK_GenericFavorite_Relationship" FromRole="GenericFavorite" ToRole="Relationship" />
+          <NavigationProperty Name="Relationship" Relationship="EData.Repository.FK_GenericFavorite_Relationship" FromRole="GenericFavorite" ToRole="Relationship" />
         </EntityType>
         <EntityType Name="Gift">
           <Key>
@@ -557,7 +557,7 @@
           <Property Name="Occasion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="OccasionOther" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="RelationshipId" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Relationship" Relationship="RelationshipsModel.FK_Gift_Relationship" FromRole="Gift" ToRole="Relationship" />
+          <NavigationProperty Name="Relationship" Relationship="EData.Repository.FK_Gift_Relationship" FromRole="Gift" ToRole="Relationship" />
         </EntityType>
         <EntityType Name="Relationship">
           <Key>
@@ -577,12 +577,12 @@
           <Property Name="Deleted" Type="Boolean" Nullable="false" />
           <Property Name="DeletedDate" Type="DateTime" />
           <Property Name="MarriedToYou" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Artist" Relationship="RelationshipsModel.FK_Artist_Relationship" FromRole="Relationship" ToRole="Artist" />
-          <NavigationProperty Name="Favorites" Relationship="RelationshipsModel.FK_Favorites_Relationship" FromRole="Relationship" ToRole="Favorites" />
-          <NavigationProperty Name="Flowers" Relationship="RelationshipsModel.FK_Flowers_Relationship" FromRole="Relationship" ToRole="Flowers" />
-          <NavigationProperty Name="GenericFavorite" Relationship="RelationshipsModel.FK_GenericFavorite_Relationship" FromRole="Relationship" ToRole="GenericFavorite" />
-          <NavigationProperty Name="Gift" Relationship="RelationshipsModel.FK_Gift_Relationship" FromRole="Relationship" ToRole="Gift" />
-          <NavigationProperty Name="Restaurant" Relationship="RelationshipsModel.FK_Restaurant_Relationship" FromRole="Relationship" ToRole="Restaurant" />
+          <NavigationProperty Name="Artist" Relationship="EData.Repository.FK_Artist_Relationship" FromRole="Relationship" ToRole="Artist" />
+          <NavigationProperty Name="Favorites" Relationship="EData.Repository.FK_Favorites_Relationship" FromRole="Relationship" ToRole="Favorites" />
+          <NavigationProperty Name="Flowers" Relationship="EData.Repository.FK_Flowers_Relationship" FromRole="Relationship" ToRole="Flowers" />
+          <NavigationProperty Name="GenericFavorite" Relationship="EData.Repository.FK_GenericFavorite_Relationship" FromRole="Relationship" ToRole="GenericFavorite" />
+          <NavigationProperty Name="Gift" Relationship="EData.Repository.FK_Gift_Relationship" FromRole="Relationship" ToRole="Gift" />
+          <NavigationProperty Name="Restaurant" Relationship="EData.Repository.FK_Restaurant_Relationship" FromRole="Relationship" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Restaurant">
           <Key>
@@ -596,7 +596,7 @@
           <Property Name="Rating" Type="Double" />
           <Property Name="Bar" Type="Boolean" Nullable="false" />
           <Property Name="RelationshipId" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="Relationship" Relationship="RelationshipsModel.FK_Restaurant_Relationship" FromRole="Restaurant" ToRole="Relationship" />
+          <NavigationProperty Name="Relationship" Relationship="EData.Repository.FK_Restaurant_Relationship" FromRole="Restaurant" ToRole="Relationship" />
         </EntityType>
         <EntityType Name="vw_aspnet_Applications">
           <Key>
@@ -730,8 +730,8 @@
           <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
         </EntityType>
         <Association Name="FK_Artist_Relationship">
-          <End Role="Relationship" Type="RelationshipsModel.Relationship" Multiplicity="1" />
-          <End Role="Artist" Type="RelationshipsModel.Artist" Multiplicity="*" />
+          <End Role="Relationship" Type="EData.Repository.Relationship" Multiplicity="1" />
+          <End Role="Artist" Type="EData.Repository.Artist" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Relationship">
               <PropertyRef Name="Id" />
@@ -742,8 +742,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Favorites_Relationship">
-          <End Role="Relationship" Type="RelationshipsModel.Relationship" Multiplicity="1" />
-          <End Role="Favorites" Type="RelationshipsModel.Favorites" Multiplicity="*" />
+          <End Role="Relationship" Type="EData.Repository.Relationship" Multiplicity="1" />
+          <End Role="Favorites" Type="EData.Repository.Favorites" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Relationship">
               <PropertyRef Name="Id" />
@@ -754,8 +754,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Flowers_Relationship">
-          <End Role="Relationship" Type="RelationshipsModel.Relationship" Multiplicity="1" />
-          <End Role="Flowers" Type="RelationshipsModel.Flowers" Multiplicity="*" />
+          <End Role="Relationship" Type="EData.Repository.Relationship" Multiplicity="1" />
+          <End Role="Flowers" Type="EData.Repository.Flowers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Relationship">
               <PropertyRef Name="Id" />
@@ -766,8 +766,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GenericFavorite_Relationship">
-          <End Role="Relationship" Type="RelationshipsModel.Relationship" Multiplicity="1" />
-          <End Role="GenericFavorite" Type="RelationshipsModel.GenericFavorite" Multiplicity="*" />
+          <End Role="Relationship" Type="EData.Repository.Relationship" Multiplicity="1" />
+          <End Role="GenericFavorite" Type="EData.Repository.GenericFavorite" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Relationship">
               <PropertyRef Name="Id" />
@@ -778,8 +778,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Gift_Relationship">
-          <End Role="Relationship" Type="RelationshipsModel.Relationship" Multiplicity="1" />
-          <End Role="Gift" Type="RelationshipsModel.Gift" Multiplicity="*" />
+          <End Role="Relationship" Type="EData.Repository.Relationship" Multiplicity="1" />
+          <End Role="Gift" Type="EData.Repository.Gift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Relationship">
               <PropertyRef Name="Id" />
@@ -790,8 +790,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Restaurant_Relationship">
-          <End Role="Relationship" Type="RelationshipsModel.Relationship" Multiplicity="1" />
-          <End Role="Restaurant" Type="RelationshipsModel.Restaurant" Multiplicity="*" />
+          <End Role="Relationship" Type="EData.Repository.Relationship" Multiplicity="1" />
+          <End Role="Restaurant" Type="EData.Repository.Restaurant" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Relationship">
               <PropertyRef Name="Id" />
@@ -806,15 +806,15 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RelationshipsModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="Artist"><EntityTypeMapping TypeName="RelationshipsModel.Artist"><MappingFragment StoreEntitySet="Artist">
+        <EntityContainerMapping StorageEntityContainer="RelationshipsModelStoreContainer" CdmEntityContainer="RelationshipsDatabase">
+          <EntitySetMapping Name="Artist"><EntityTypeMapping TypeName="EData.Repository.Artist"><MappingFragment StoreEntitySet="Artist">
             <ScalarProperty Name="Id" ColumnName="ArtistId" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="AttendedCount" ColumnName="AttendedCount" />
             <ScalarProperty Name="Notes" ColumnName="Notes" />
             <ScalarProperty Name="RelationshipId" ColumnName="fkRelationshipId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Favorites"><EntityTypeMapping TypeName="RelationshipsModel.Favorites"><MappingFragment StoreEntitySet="Favorites">
+          <EntitySetMapping Name="Favorites"><EntityTypeMapping TypeName="EData.Repository.Favorites"><MappingFragment StoreEntitySet="Favorites">
             <ScalarProperty Name="Id" ColumnName="FavoriteId" />
             <ScalarProperty Name="Color" ColumnName="Color" />
             <ScalarProperty Name="Flower" ColumnName="Flower" />
@@ -822,7 +822,7 @@
             <ScalarProperty Name="Band" ColumnName="Band" />
             <ScalarProperty Name="RelationshipId" ColumnName="fkRelationshipId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Flowers"><EntityTypeMapping TypeName="RelationshipsModel.Flowers"><MappingFragment StoreEntitySet="Flowers">
+          <EntitySetMapping Name="Flowers"><EntityTypeMapping TypeName="EData.Repository.Flowers"><MappingFragment StoreEntitySet="Flowers">
             <ScalarProperty Name="Id" ColumnName="FlowerId" />
             <ScalarProperty Name="ArrangementName" ColumnName="ArrangementName" />
             <ScalarProperty Name="Vendor" ColumnName="Vendor" />
@@ -833,13 +833,13 @@
             <ScalarProperty Name="Notes" ColumnName="Notes" />
             <ScalarProperty Name="RelationshipId" ColumnName="fkRelationshipId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="GenericFavorite"><EntityTypeMapping TypeName="RelationshipsModel.GenericFavorite"><MappingFragment StoreEntitySet="GenericFavorite">
+          <EntitySetMapping Name="GenericFavorite"><EntityTypeMapping TypeName="EData.Repository.GenericFavorite"><MappingFragment StoreEntitySet="GenericFavorite">
             <ScalarProperty Name="Id" ColumnName="GenericFavoriteId" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="Value" ColumnName="Value" />
             <ScalarProperty Name="RelationshipId" ColumnName="fkRelationshipId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Gift"><EntityTypeMapping TypeName="RelationshipsModel.Gift"><MappingFragment StoreEntitySet="Gift">
+          <EntitySetMapping Name="Gift"><EntityTypeMapping TypeName="EData.Repository.Gift"><MappingFragment StoreEntitySet="Gift">
             <ScalarProperty Name="Id" ColumnName="GiftId" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -850,7 +850,7 @@
             <ScalarProperty Name="OccasionOther" ColumnName="OccasionOther" />
             <ScalarProperty Name="RelationshipId" ColumnName="fkRelationshipId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Relationship"><EntityTypeMapping TypeName="RelationshipsModel.Relationship"><MappingFragment StoreEntitySet="Relationship">
+          <EntitySetMapping Name="Relationship"><EntityTypeMapping TypeName="EData.Repository.Relationship"><MappingFragment StoreEntitySet="Relationship">
             <ScalarProperty Name="Id" ColumnName="RelationshipId" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="NickName" ColumnName="NickName" />
@@ -866,7 +866,7 @@
             <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
             <ScalarProperty Name="MarriedToYou" ColumnName="MarriedToYou" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Restaurant"><EntityTypeMapping TypeName="RelationshipsModel.Restaurant"><MappingFragment StoreEntitySet="Restaurant">
+          <EntitySetMapping Name="Restaurant"><EntityTypeMapping TypeName="EData.Repository.Restaurant"><MappingFragment StoreEntitySet="Restaurant">
             <ScalarProperty Name="Id" ColumnName="RestaurantId" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="FoodType" ColumnName="FoodType" />
@@ -876,13 +876,13 @@
             <ScalarProperty Name="Bar" ColumnName="Bar" />
             <ScalarProperty Name="RelationshipId" ColumnName="fkRelationshipId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Applications"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_Applications"><MappingFragment StoreEntitySet="vw_aspnet_Applications">
+          <EntitySetMapping Name="vw_aspnet_Applications"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_Applications"><MappingFragment StoreEntitySet="vw_aspnet_Applications">
             <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
             <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
             <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
             <ScalarProperty Name="Description" ColumnName="Description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_MembershipUsers"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_MembershipUsers"><MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
+          <EntitySetMapping Name="vw_aspnet_MembershipUsers"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_MembershipUsers"><MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
             <ScalarProperty Name="UserId" ColumnName="UserId" />
             <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
             <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
@@ -907,19 +907,19 @@
             <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
             <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Profiles"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_Profiles"><MappingFragment StoreEntitySet="vw_aspnet_Profiles">
+          <EntitySetMapping Name="vw_aspnet_Profiles"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_Profiles"><MappingFragment StoreEntitySet="vw_aspnet_Profiles">
             <ScalarProperty Name="UserId" ColumnName="UserId" />
             <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
             <ScalarProperty Name="DataSize" ColumnName="DataSize" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Roles"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_Roles"><MappingFragment StoreEntitySet="vw_aspnet_Roles">
+          <EntitySetMapping Name="vw_aspnet_Roles"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_Roles"><MappingFragment StoreEntitySet="vw_aspnet_Roles">
             <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
             <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             <ScalarProperty Name="RoleName" ColumnName="RoleName" />
             <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
             <ScalarProperty Name="Description" ColumnName="Description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Users"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_Users"><MappingFragment StoreEntitySet="vw_aspnet_Users">
+          <EntitySetMapping Name="vw_aspnet_Users"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_Users"><MappingFragment StoreEntitySet="vw_aspnet_Users">
             <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
             <ScalarProperty Name="UserId" ColumnName="UserId" />
             <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -928,22 +928,22 @@
             <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
             <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_UsersInRoles"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_UsersInRoles"><MappingFragment StoreEntitySet="vw_aspnet_UsersInRoles">
+          <EntitySetMapping Name="vw_aspnet_UsersInRoles"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_UsersInRoles"><MappingFragment StoreEntitySet="vw_aspnet_UsersInRoles">
             <ScalarProperty Name="UserId" ColumnName="UserId" />
             <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_WebPartState_Paths"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_WebPartState_Paths"><MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Paths">
+          <EntitySetMapping Name="vw_aspnet_WebPartState_Paths"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_WebPartState_Paths"><MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Paths">
             <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
             <ScalarProperty Name="PathId" ColumnName="PathId" />
             <ScalarProperty Name="Path" ColumnName="Path" />
             <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_WebPartState_Shared"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_WebPartState_Shared"><MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Shared">
+          <EntitySetMapping Name="vw_aspnet_WebPartState_Shared"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_WebPartState_Shared"><MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Shared">
             <ScalarProperty Name="PathId" ColumnName="PathId" />
             <ScalarProperty Name="DataSize" ColumnName="DataSize" />
             <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_WebPartState_User"><EntityTypeMapping TypeName="RelationshipsModel.vw_aspnet_WebPartState_User"><MappingFragment StoreEntitySet="vw_aspnet_WebPartState_User">
+          <EntitySetMapping Name="vw_aspnet_WebPartState_User"><EntityTypeMapping TypeName="EData.Repository.vw_aspnet_WebPartState_User"><MappingFragment StoreEntitySet="vw_aspnet_WebPartState_User">
             <ScalarProperty Name="PathId" ColumnName="PathId" />
             <ScalarProperty Name="UserId" ColumnName="UserId" />
             <ScalarProperty Name="DataSize" ColumnName="DataSize" />
@@ -970,44 +970,44 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Relationships" ZoomLevel="93">
-        <EntityTypeShape EntityType="RelationshipsModel.Artist" Width="1.5" PointX="7" PointY="2.5" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.Favorites" Width="1.5" PointX="3.875" PointY="2.625" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.Flowers" Width="1.5" PointX="8.5" PointY="4.875" Height="2.9417936197916665" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.GenericFavorite" Width="1.5" PointX="3" PointY="5.875" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.Gift" Width="1.5" PointX="3.75" PointY="8.75" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.Relationship" Width="1.5" PointX="6.125" PointY="4.875" Height="4.8648079427083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.Restaurant" Width="1.5" PointX="8.5" PointY="8.625" Height="2.749492187499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_Applications" Width="1.5" PointX="15.75" PointY="4.5" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="15.75" PointY="7.5" Height="5.4417122395833353" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_Profiles" Width="1.5" PointX="17.75" PointY="4.5" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_Roles" Width="1.5" PointX="17.75" PointY="7.5" Height="1.9802864583333353" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_Users" Width="1.5" PointX="17.75" PointY="10.5" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_UsersInRoles" Width="1.5" PointX="19.75" PointY="4.5" Height="1.4033821614583388" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="19.75" PointY="7.5" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="19.75" PointY="10.5" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="RelationshipsModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="19.75" PointY="13.5" Height="1.7879850260416674" IsExpanded="true" />
-        <AssociationConnector Association="RelationshipsModel.FK_Artist_Relationship" ManuallyRouted="false">
+        <EntityTypeShape EntityType="EData.Repository.Artist" Width="1.5" PointX="7" PointY="2.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.Favorites" Width="1.5" PointX="3.875" PointY="2.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.Flowers" Width="1.5" PointX="8.5" PointY="4.875" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.GenericFavorite" Width="1.5" PointX="3" PointY="5.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.Gift" Width="1.5" PointX="3.75" PointY="8.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.Relationship" Width="1.5" PointX="6.125" PointY="4.875" Height="4.8648079427083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.Restaurant" Width="1.5" PointX="8.5" PointY="8.625" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_Applications" Width="1.5" PointX="15.75" PointY="4.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_MembershipUsers" Width="1.5" PointX="15.75" PointY="7.5" Height="5.4417122395833353" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_Profiles" Width="1.5" PointX="17.75" PointY="4.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_Roles" Width="1.5" PointX="17.75" PointY="7.5" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_Users" Width="1.5" PointX="17.75" PointY="10.5" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_UsersInRoles" Width="1.5" PointX="19.75" PointY="4.5" Height="1.4033821614583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="19.75" PointY="7.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="19.75" PointY="10.5" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="EData.Repository.vw_aspnet_WebPartState_User" Width="1.5" PointX="19.75" PointY="13.5" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="EData.Repository.FK_Artist_Relationship" ManuallyRouted="false">
           <ConnectorPoint PointX="7.3125" PointY="4.875" />
           <ConnectorPoint PointX="7.3125" PointY="4.672587890625" />
         </AssociationConnector>
-        <AssociationConnector Association="RelationshipsModel.FK_Favorites_Relationship" ManuallyRouted="false">
+        <AssociationConnector Association="EData.Repository.FK_Favorites_Relationship" ManuallyRouted="false">
           <ConnectorPoint PointX="6.125" PointY="5.4011951614583342" />
           <ConnectorPoint PointX="4.96875" PointY="5.4011951614583342" />
           <ConnectorPoint PointX="4.96875" PointY="4.9898893229166674" />
         </AssociationConnector>
-        <AssociationConnector Association="RelationshipsModel.FK_Flowers_Relationship" ManuallyRouted="false">
+        <AssociationConnector Association="EData.Repository.FK_Flowers_Relationship" ManuallyRouted="false">
           <ConnectorPoint PointX="7.625" PointY="6.3458968098958337" />
           <ConnectorPoint PointX="8.5" PointY="6.3458968098958337" />
         </AssociationConnector>
-        <AssociationConnector Association="RelationshipsModel.FK_GenericFavorite_Relationship" ManuallyRouted="false">
+        <AssociationConnector Association="EData.Repository.FK_GenericFavorite_Relationship" ManuallyRouted="false">
           <ConnectorPoint PointX="6.125" PointY="6.8651432291666659" />
           <ConnectorPoint PointX="4.5" PointY="6.8651432291666659" />
         </AssociationConnector>
-        <AssociationConnector Association="RelationshipsModel.FK_Gift_Relationship" ManuallyRouted="false">
+        <AssociationConnector Association="EData.Repository.FK_Gift_Relationship" ManuallyRouted="false">
           <ConnectorPoint PointX="6.125" PointY="9.2449039713541659" />
           <ConnectorPoint PointX="5.25" PointY="9.2449039713541659" />
         </AssociationConnector>
-        <AssociationConnector Association="RelationshipsModel.FK_Restaurant_Relationship" ManuallyRouted="false">
+        <AssociationConnector Association="EData.Repository.FK_Restaurant_Relationship" ManuallyRouted="false">
           <ConnectorPoint PointX="7.625" PointY="9.1824039713541659" />
           <ConnectorPoint PointX="8.5" PointY="9.1824039713541659" />
         </AssociationConnector>
