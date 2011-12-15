@@ -71,6 +71,7 @@
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ConnectionString.cs" />
     <Compile Include="Repository\DebuggerWriter.cs" />
+    <Compile Include="Repository\DomainObjectFactory.cs" />
     <Compile Include="Repository\FavoritesRepository.cs" />
     <Compile Include="Repository\FlowersRepository.cs" />
     <Compile Include="Repository\GenericFavoriteRepository.cs" />
