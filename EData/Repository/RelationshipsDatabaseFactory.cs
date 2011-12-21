@@ -29,18 +29,19 @@ namespace EData.Repository
 
                 //options.LoadWith<Tour>(tour => tour.Shows);
 
-
+                
 
 
 
 
                 //NEEED TO UCOMMENT THIS
-                //_database = new RelationshipsDatabase(_connectionString) 
-                //    { 
-                //        LoadOptions = options, 
-                //        DeferredLoadingEnabled = true, 
-                //        Log = (_logWriter == null ? null : _logWriter.Get()) 
-                //    };
+                _database = new RelationshipsDatabase( _connectionString )
+                    { 
+                         
+                        //LoadOptions = options, 
+                        //DeferredLoadingEnabled = true, 
+                        //Log = (_logWriter == null ? null : _logWriter.Get()) 
+                    };
             }
 
             return _database;

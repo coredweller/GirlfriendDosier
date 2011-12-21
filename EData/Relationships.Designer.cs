@@ -18,16 +18,16 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Artist_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Artist", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Artist), true)]
-[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Favorites_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Favorites", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Favorites), true)]
-[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Flowers_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Flowers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Flowers), true)]
-[assembly: EdmRelationshipAttribute("EData.Repository", "FK_GenericFavorite_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "GenericFavorite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.GenericFavorite), true)]
-[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Gift_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Gift", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Gift), true)]
-[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Restaurant_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Relationship), "Restaurant", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Restaurant), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Artist_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Repository.Relationship), "Artist", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Repository.Artist), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Favorites_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Repository.Relationship), "Favorites", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Repository.Favorites), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Flowers_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Repository.Relationship), "Flowers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Repository.Flowers), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_GenericFavorite_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Repository.Relationship), "GenericFavorite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Repository.GenericFavorite), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Gift_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Repository.Relationship), "Gift", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Repository.Gift), true)]
+[assembly: EdmRelationshipAttribute("EData.Repository", "FK_Restaurant_Relationship", "Relationship", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EData.Repository.Relationship), "Restaurant", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EData.Repository.Restaurant), true)]
 
 #endregion
 
-namespace EData
+namespace EData.Repository
 {
     #region Contexts
     

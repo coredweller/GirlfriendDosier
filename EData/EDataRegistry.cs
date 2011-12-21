@@ -1,5 +1,6 @@
 ﻿using StructureMap.Configuration.DSL;
 using EData.Repository;
+using Core.Repository;
 
 namespace EData
 {
@@ -9,7 +10,7 @@ namespace EData
             For<IConnectionString>()
                    .Singleton()
                    .Use<ConnectionString>()
-                   .WithCtorArg( "connectionStringKey" ).EqualTo( "RelationshipsConnectionString" );
+                   .WithCtorArg( "connectionStringKey" ).EqualTo( "RelationshipsEntities" );
 
             For<Core.Infrastructure.IUnitOfWork>()
                     .HybridHttpOrThreadLocalScoped()
@@ -30,6 +31,64 @@ namespace EData
             For<IRelationshipsDatabaseFactory>()
                 .HybridHttpOrThreadLocalScoped()
                 .Use<RelationshipsDatabaseFactory>();
+
+
+
+
+
+
+
+
+
+            //Repositories
+            For<IArtistRepository>()
+                .HybridHttpOrThreadLocalScoped()
+                .Use<ArtistRepository>()
+                .Ctor<IRelationshipsDatabaseFactory>("factory").IsTheDefault();
+
+            SelectConstructor<ArtistRepository>(() => new ArtistRepository((IRelationshipsDatabaseFactory)null));
+
+            For<IFavoritesRepository>()
+                .HybridHttpOrThreadLocalScoped()
+                .Use<FavoritesRepository>()
+                .Ctor<IRelationshipsDatabaseFactory>("factory").IsTheDefault();
+
+            SelectConstructor<FavoritesRepository>(() => new FavoritesRepository((IRelationshipsDatabaseFactory)null));
+
+            For<IFlowersRepository>()
+                .HybridHttpOrThreadLocalScoped()
+                .Use<FlowersRepository>()
+                .Ctor<IRelationshipsDatabaseFactory>("factory").IsTheDefault();
+
+            SelectConstructor<FlowersRepository>(() => new FlowersRepository((IRelationshipsDatabaseFactory)null));
+
+            For<IGenericFavoriteRepository>()
+                .HybridHttpOrThreadLocalScoped()
+                .Use<GenericFavoriteRepository>()
+                .Ctor<IRelationshipsDatabaseFactory>("factory").IsTheDefault();
+
+            SelectConstructor<GenericFavoriteRepository>(() => new GenericFavoriteRepository((IRelationshipsDatabaseFactory)null));
+
+            For<IGiftRepository>()
+                .HybridHttpOrThreadLocalScoped()
+                .Use<GiftRepository>()
+                .Ctor<IRelationshipsDatabaseFactory>("factory").IsTheDefault();
+
+            SelectConstructor<GiftRepository>(() => new GiftRepository((IRelationshipsDatabaseFactory)null));
+
+            For<IRelationshipRepository>()
+                .HybridHttpOrThreadLocalScoped()
+                .Use<RelationshipRepository>()
+                .Ctor<IRelationshipsDatabaseFactory>("factory").IsTheDefault();
+
+            SelectConstructor<RelationshipRepository>(() => new RelationshipRepository((IRelationshipsDatabaseFactory)null));
+
+            For<IRestaurantRepository>()
+                .HybridHttpOrThreadLocalScoped()
+                .Use<RestaurantRepository>()
+                .Ctor<IRelationshipsDatabaseFactory>("factory").IsTheDefault();
+
+            SelectConstructor<RestaurantRepository>(() => new RestaurantRepository((IRelationshipsDatabaseFactory)null));
         }
     }
 }

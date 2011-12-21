@@ -53,6 +53,7 @@
     <Compile Include="Configuration\ConfigurationSettings.cs" />
     <Compile Include="Configuration\IAppConfigManager.cs" />
     <Compile Include="Configuration\IConfigurationSettings.cs" />
+    <Compile Include="CoreRegistry.cs" />
     <Compile Include="DomainObjects\IArtist.cs" />
     <Compile Include="DomainObjects\IFavorites.cs" />
     <Compile Include="DomainObjects\IFlowers.cs" />

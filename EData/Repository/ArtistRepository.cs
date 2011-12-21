@@ -5,6 +5,7 @@ using EData;
 using Core.Helpers;
 using Core.Exceptions;
 using Core.Repository;
+using System.Collections.Generic;
 
 namespace EData.Repository
 {
@@ -21,7 +22,7 @@ namespace EData.Repository
         }
 
         public IArtist FindById( Guid id ) {
-            return GetAll().SingleOrDefault( x => x.Id == id );
+            return GetAll().OfType<Artist>().SingleOrDefault( x => x.Id == id );
         }
 
         public override void Add(IArtist entity)
@@ -46,4 +47,17 @@ namespace EData.Repository
             base.Remove(entity);
         }
     }
+
+    //internal static class ArtistFilter
+    //{
+    //    public static IList<IArtist> Cast( this IQueryable<Artist> query ) {
+    //        return query
+    //            .Cast<IArtist>()
+    //            .ToList();
+    //    }
+
+    //    public static IQueryable<Artist> FilterById( this IQueryable<Artist> query, Guid id ) {
+    //        return query.Where( x => x.Id == id );
+    //    }
+    //}
 }

@@ -1,6 +1,6 @@
 ﻿using Core.DomainObjects;
 
-namespace EData
+namespace EData.Repository
 {
     public partial class GenericFavorite : IGenericFavorite
     {

@@ -6,7 +6,7 @@ using Core.DomainObjects;
 using EData.Repository;
 using System;
 
-namespace EData
+namespace EData.Repository
 {
     public partial class RelationshipsDatabase : IRelationshipsDatabase
     {
@@ -17,7 +17,7 @@ namespace EData
         }
 
         public IQueryable<IArtist> ArtistDataSource {
-            get { return GetQueryable<Artist>().Cast<IArtist>(); }
+            get { return GetQueryable<Artist>(); }
         }
 
         public IQueryable<IFavorites> FavoritesDataSource {
@@ -71,7 +71,7 @@ namespace EData
 
         [DebuggerStepThrough]
         public void Insert<TEntity>( TEntity instance) where TEntity : class {
-            AddObject(instance.GetType().ToString(), instance );
+            AddObject(instance.GetType().Name, instance );
         }
 
         //[DebuggerStepThrough]
